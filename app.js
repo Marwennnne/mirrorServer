@@ -8,6 +8,10 @@ mongoose.connect('mongodb://localhost:27017/testMirror', {useNewUrlParser: true}
     console.log("mongoose connected")
 })
 
+app.get('/',(res,req) => {
+    res.status(200).json({ message: "hello world"});
+});
+
 app.use(bodyParser.json());
 app.use(RouterInterface);
 
