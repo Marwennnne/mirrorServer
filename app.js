@@ -29,7 +29,7 @@ io.on("connection", async (socket) => {
     
 });
 
-httpServer.listen(3000,() => {
+httpServer.listen(process.env.PORT || 3000,() => {
     console.log("Serveur is listening on Port 3000")
 });
 
