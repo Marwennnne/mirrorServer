@@ -18,10 +18,8 @@ router.post('/interface/:id', async (req, res) => {
 router.get('/interface/:id', async (req, res) => {
     try{
 
-        interface.findById(req.params.id).then((document) => {
-            return res.status(200).json({
-                data: document
-            });
+        interface.findOne({id: req.params.id}).then((document) => {
+            return res.status(200).json(document);
         });
 
     }catch(err){
